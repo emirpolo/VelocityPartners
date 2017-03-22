@@ -1,0 +1,66 @@
+/* Space out content a bit */
+body {
+    margin: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+    padding-bottom: 10px;
+    position: relative;
+}
+.header:after {
+    content: ' ';
+    /* border-bottom: solid 1px #a7a3a3; */
+    display: block;
+    width: 200%;
+    position: absolute;
+    left: -50%;
+    height: 104%;
+    bottom: -1px;
+    z-index: -1;
+    box-shadow: 1px 1px 15px rgba(128, 128, 128, 0.27);
+    background: rgb(245, 245, 245);
+}
+.header nav {
+    position: relative;
+    top: 16px;
+}
+.header h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    display: inline-block;
+    color: #000;
+    text-shadow: 1px 1px 3px #b3b3b3;
+}
+.header h3 small {
+    color: #000;
+    font-style: italic;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.sortorder:after {
+    content: '\25b2';
+}
+.sortorder.reverse:after {
+    content: '\25bc';
+}
+
+table thead th {
+    white-space: nowrap;
+    cursor: pointer;
+}

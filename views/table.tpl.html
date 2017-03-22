@@ -1,0 +1,34 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th ng-click="sortBy('firstName')" ng-class="{sortorder: propertyName === 'firstName', reverse: reverse}">Contact Name</th>
+                <th ng-click="sortBy('title')" ng-class="{sortorder: propertyName === 'title', reverse: reverse}">Contact Title</th>
+                <th ng-click="sortBy('outletId')" ng-class="{sortorder: propertyName === 'outletId', reverse: reverse}">Outlet name</th>
+                <th ng-click="sortBy('profile')" ng-class="{sortorder: propertyName === 'profile', reverse: reverse}">Contact Profile</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in pagination.currentRows">
+            <td ng-bind="row.firstName + ' ' + row.lastName"></td>
+            <td ng-bind="row.title"></td>
+            <td ng-bind="getOutletName(row.outletId)"></td>
+            <td ng-bind="row.profile"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li ng-class="{disabled: !pagination.havePreviousPage}">
+            <a aria-label="Previous" ng-click="pagination.changePage('PREV', pagination.havePreviousPage)"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        <li ng-repeat="i in range(pagination.pages)" ng-class="{active: pagination.currentPage ==  $index}">
+            <a ng-click="pagination.changePage($index, true)">{{$index + 1}}</a>
+        </li>
+        <li ng-class="{disabled: !pagination.haveNextPage}">
+            <a ng-click="pagination.changePage('NEXT', pagination.haveNextPage)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+    </ul>
+</nav>

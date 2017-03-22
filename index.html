@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Velocity Partners Test</title>
+    <meta name="description" content="Test Case for Velocity Partners ">
+    <meta name="author" content="Emiro Arrieta <emiarrie@gmail.com>">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+</head>
+<body ng-app="VelocityApp">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<div class="container">
+    <div class="header clearfix" ng-controller="VelocityController">
+        <h1>Velocity Partners AngularJS Test </h1>
+    </div>
+
+    <article ng-view></article>
+
+
+    <footer class="footer">
+        <p>&copy; 2017 Emiro Arrieta.</p>
+    </footer>
+
+</div> <!-- /container -->
+
+<script src="vendors/js/jquery.min.js"></script>
+<script src="vendors/js/bootstrap.min.js"></script>
+
+<script src="vendors/js/angular.min.js"></script>
+<script src="vendors/js/angular-route.js"></script>
+
+<script src="js/VelocityApp.js"></script>
+<script src="js/VelocityService.js"></script>
+<script src="js/VelocityController.js"></script>
+<script src="js/VelocityDirective.js"></script>
+
+</body>
+</html>

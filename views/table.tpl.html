@@ -5,7 +5,7 @@
                 <th ng-click="sortBy('firstName')" ng-class="{sortorder: propertyName === 'firstName', reverse: reverse}">Contact Name</th>
                 <th ng-click="sortBy('title')" ng-class="{sortorder: propertyName === 'title', reverse: reverse}">Contact Title</th>
                 <th ng-click="sortBy('outletId')" ng-class="{sortorder: propertyName === 'outletId', reverse: reverse}">Outlet name</th>
-                <th ng-click="sortBy('profile')" ng-class="{sortorder: propertyName === 'profile', reverse: reverse}">Contact Profile</th>
+                <th ng-click="sortBy('profile', true)" ng-class="{sortorder: propertyName === 'profile', reverse: reverse}">Contact Profile</th>
             </tr>
         </thead>
         <tbody>

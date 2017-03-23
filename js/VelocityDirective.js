@@ -52,16 +52,27 @@
                 };
 
                 /***** SORTING ******/
-                scope.sortBy = function(propertyName, isLongText) {
+                scope.sortBy = function(propertyName, colIndex) {
                     scope.reverse = (propertyName !== null && scope.propertyName === propertyName) ? !scope.reverse : false;
                     scope.propertyName = propertyName;
-                    contacts = orderBy(contacts, scope.propertyName, scope.reverse,  !isLongText ? null : function(a, b) {
-                        var l = a.value.replace(/^\s+|\s+$/g, '').toLowerCase();
-                        var r = b.value.replace(/^\s+|\s+$/g, '').toLowerCase();
-                        return l == r ? 0 : l > r ? 1: -1;
-                    });
+                    contacts = orderBy(contacts, scope.propertyName, scope.reverse,  colIndex <= 1  ? null : comparator);
                     scope.pagination.changePage(0, true);
+
+                    function comparator (a, b) {
+                        var l, r;
+                        if( colIndex == 2) {
+                            l = (scope.getOutletName(a.value) || '').toLowerCase();
+                            r = (scope.getOutletName(b.value) || '').toLowerCase();
+                        }
+                        else {
+                            l = a.value.replace(/^\s+|\s+$/g, '').toLowerCase();
+                            r = b.value.replace(/^\s+|\s+$/g, '').toLowerCase();
+                        }
+                        return l == r ? 0 : l > r ? 1: -1;
+                    }
                 };
+
+
 
                 /***** WATCH ***/
                 scope.$watch('data', function (newData) {
